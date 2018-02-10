@@ -1,1 +1,1 @@
-export const GET_LINKS = 'GET_LINKS';
+export const UPDATE_LINKS = 'UPDATE_LINKS';

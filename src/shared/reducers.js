@@ -1,23 +1,18 @@
 import { links } from "../statics/index";
-import axios from "axios";
-import {GET_LINKS} from './actions';
+import {UPDATE_LINKS} from './actions';
 
 const DEFAULT_STATE = {
-  links: links
+  links: []
 };
 
-const getLinks = (state, action) => {
-    try {
-        return state;
-    } catch (e){
-        return state;
-    }
+const updateLinks = (state, action) => {
+    return Object.assign({}, state, {links: action.payload});
 };
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case GET_LINKS:
-        return getLinks(state, action);
+    case UPDATE_LINKS:
+        return updateLinks(state, action);
     default:
       return state;
   }

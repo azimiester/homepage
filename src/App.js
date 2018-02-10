@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Sidebar, Home, Blog, Contact } from "./components";
 import { Provider } from "react-redux";
 import store from "./shared/store";
-import { links as mainLinks } from "./statics/links";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
