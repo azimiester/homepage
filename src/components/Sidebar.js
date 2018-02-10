@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
 
 class Sidebar extends React.Component{
   render() {
@@ -19,5 +20,8 @@ class Sidebar extends React.Component{
       </aside>
     );
   }
-}
-export default Sidebar;
+};
+
+const mapStateToProps = state=> ({links: state.links});
+
+export default connect(mapStateToProps)(Sidebar);

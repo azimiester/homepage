@@ -84,11 +84,12 @@ ul {
 li {
   list-style-type: none;
 }
-.App {
-  display: flex;
-  flex-flow: row wrap;
-  flex: 0 1 auto;
-  height: 100vh;
+.root {
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 1 auto;
+    height: 100vh;
 }
 aside,
 main {

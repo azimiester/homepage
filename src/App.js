@@ -1,23 +1,28 @@
-import React, { Component } from 'react';
-import { Sidebar, Home, Blog, Contact } from './components';
-import {links as mainLinks} from './statics/links';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import React, { Component } from "react";
+import { Sidebar, Home, Blog, Contact } from "./components";
+import { Provider } from "react-redux";
+import store from "./shared/store";
+import { links as mainLinks } from "./statics/links";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <Sidebar links={mainLinks} />
-          <Router>
-            <main>
-              <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/contact' component={Contact}/>
-                <Route path='/blog' component={Blog}/>
-              </Switch>
-            </main>
-          </Router>
+        <Router>
+          <Provider store={store}>
+            <div className="root">
+              <Sidebar />
+              <main>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/contact" component={Contact} />
+                  <Route path="/blog" component={Blog} />
+                </Switch>
+              </main>
+            </div>
+          </Provider>
+        </Router>
       </div>
     );
   }

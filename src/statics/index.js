@@ -1,3 +1,3 @@
-import {links} from '/.links';
+import {links} from './links';
 
 export {links};
